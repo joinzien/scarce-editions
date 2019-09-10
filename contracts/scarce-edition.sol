@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721Mintable.sol";
 
 contract ScareEdition is ERC721Full, ERC721Mintable {
   constructor() ERC721Full("zien scarce editions", "AZSC") public {
+    _addMinter(msg.sender);
   }
 
   /**
