@@ -15,12 +15,14 @@ contract MyNFT is ERC721Full, ERC721Mintable {
     * @param workId uint64 ID of the work
     * @param editionNumber uint64 number of this edition
     * @param editionCount uint64 total count for this work
+    * @param uri string of the work
     */
-  function create(address to, uint64 artistId, uint64 workId, uint64 editionNumber, uint64 editionCount) public onlyMinter returns (bool) {
+  function create(address to, uint64 artistId, uint64 workId, uint64 editionNumber, uint64 editionCount, string memory uri) public onlyMinter returns (bool) {
     require(editionCount > editionNumber);
     uint256 tokenId = (artistId << 192) + (workId << 128) + (editionNumber << 64) + editionCount;
 
     _mint(to, tokenId);
+    _setTokenURI(tokenId, uri); 
 
     return true;
   }
