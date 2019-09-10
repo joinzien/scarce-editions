@@ -25,6 +25,8 @@ Where:
 - `editionCount` uint64 total count for this edition.
 - `uri` The URI of the work.
 
+All id's are zero based (start from 0, not 1)
+
 ### Transfer an Edition
 
 `scareEditions.transferFrom(address from, address to, uint256 tokenId)`
