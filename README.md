@@ -19,6 +19,8 @@ It is recommended that [Node Version Manager][nvm] is used to ensure the correct
 
     nvm install lts/dubnium
     nvm use lts/dubnium
+    
+The expected output is    
     Now using node v10.19.0 (npm v6.13.4)
 
 ### Dependencies
