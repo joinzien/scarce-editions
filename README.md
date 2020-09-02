@@ -1,48 +1,52 @@
 # Scarce Editions
 Scarce editions are unique pieces of art, available for a limited time. Used by [zien][zien].
 
-## Design
-
-[Non-fungible tokens][nft] are used to represent each edition. Based on the [ERC721][erc721] standard. ERC721 uses a uint256 as the unique id of each token. 
-
-Scarce Editions segment that number into a number of fields to generate a unique number for each edition:
-- 64 bits for the Artist ID.
-- 64 bits for the Work ID.
-- 64 bits for the edition number.
-- 64 bits for the edition size. 
-
-## Usage
-
-### Creating an Edition
-
-`bool success = scareEditions.create(address to, uint64 artistId, uint64 workId, uint64 editionNumber, uint64 editionCount, string memory uri);`
-
-Where: 
-- `to` The address that will own the scarce edition.
-- `artistId` uint64 ID of the artist who created the work.
-- `workId` uint64 ID of the work.
-- `editionNumber` uint64 number of this edition.
-- `editionCount` uint64 total count for this edition.
-- `uri` The URI of the work.
-
-All id's are zero based (start from 0, not 1)
-
-### Transfer an Edition
-
-`scareEditions.transferFrom(address from, address to, uint256 tokenId)`
-
-Where:
-- `from` The address that currently own the scarce edition.
-- `to` The address that will own the scarce edition.
-- `tokenId` uint256 ID of the scarce edition.
+## Features
+- [Non-fungible tokens][nft] are used to represent each edition. 
+- Based on the [ERC721][erc721] standard. 
+- ERC721 uses a uint256 as the unique id of each token. 
 
 ## Developing
 
+### Prerequisites
+
+This project is developed using Node.js with the following versions 
+
+* node 10.19.0
+* npm 6.13.4
+
+It is recommended that [Node Version Manager][nvm] is used to ensure the correct versions are used. 
+
+    nvm install lts/dubnium
+    nvm use lts/dubnium
+    Now using node v10.19.0 (npm v6.13.4)
+
+### Dependencies
+
+Install dependencies using [npm][npm]
+
+    npm install
+
+This will install all the required packages to develop using the Scarce Editions Contract.
+
+## Testing
+
+Start `ganache` in a separate terminal tab or window.
+
+    npm run ganache
+
+Run the tests
+
+    npm test
+
+## Contribute
 We welcome [contributions][contrib], be they [issues][issues], [pull requests][pullrequest] or in another form that follow our [code of conduct][codeofconduct].
 
-[zien]: https://github.com/axna/zien
+[zien]: https://zien.io/
 [nft]: https://en.wikipedia.org/wiki/Non-fungible_token
 [erc721]: http://erc721.org/
+[npm]: https://docs.npmjs.com/getting-started/installing-node
+[nvm]: https://github.com/nvm-sh/nvm
 [issues]: ../../issues/new/choose
 [pullrequest]: .github/PULL_REQUEST_TEMPLATE.md
 [contrib]: .github/CONTRIBUTING.md
