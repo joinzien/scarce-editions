@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract ScareEdition is ERC721 {
+contract ScarceEdition is ERC721 {
   address private _owner;
 
   constructor() ERC721("zien scarce editions", "AZSC") public {
