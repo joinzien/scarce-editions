@@ -28,7 +28,7 @@
   },
   "scripts": {
     "compile": "truffle compile",
-    "test": "truffle test",    
+    "test": "truffle test",
     "deploy": "truffle deploy --network ci"
   }
 }
