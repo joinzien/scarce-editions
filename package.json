@@ -29,6 +29,7 @@
   "scripts": {
     "compile": "truffle compile",
     "test": "truffle test",
+    "ganache": "ganache-cli --port 7545 --gasLimit 0xFFFFFFFF",
     "deploy": "truffle deploy --network ci"
   }
 }
