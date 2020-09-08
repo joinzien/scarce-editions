@@ -3,6 +3,8 @@
 
 Scarce editions are unique pieces of art, available for a limited time. Used by [zien][zien].
 
+Noteworthy changes are recorded in the [changelog][changelog]. Brief instructions on [creating an edition][usage] are provided.
+
 ## Features
 - [Non-fungible tokens][nft] are used to represent each edition. 
 - Based on the [ERC721][erc721] standard. 
@@ -55,3 +57,5 @@ We welcome [contributions][contrib], be they [issues][issues], [pull requests][p
 [pullrequest]: .github/PULL_REQUEST_TEMPLATE.md
 [contrib]: .github/CONTRIBUTING.md
 [codeofconduct]: ./CODE_OF_CONDUCT.md 
+[changelog]: CHANGELOG.md
+[usage]: usage.md
