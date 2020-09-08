@@ -24,6 +24,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "^3.1.0",
     "ganache-cli": "^6.10.1",
+    "solhint": "^3.2.0",
     "truffle": "^5.1.43",
     "truffle-hdwallet-provider": "^1.0.17"
   },
@@ -32,6 +33,7 @@
     "test": "truffle test",
     "ganache": "ganache-cli --port 7545 --gasLimit 0xFFFFFFFF",
     "flatten": "truffle-flattener ./contracts/ScarceEdition.sol > ./ScareEditionFlattened.sol",
+    "lint": "solhint contracts/*.sol",
     "mainnet-migrate": "truffle deploy --network main",
     "ropsten-migrate": "truffle deploy --network ropsten",
     "rinkeby-migrate": "truffle deploy --network rinkeby",
