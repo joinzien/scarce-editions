@@ -1,5 +1,5 @@
 # Scarce Editions
-![Truffle Unittests](https://github.com/axna/scarce-editions/workflows/Truffle%20Unittests/badge.svg)
+![Truffle Unittests](https://github.com/axna/scarce-editions/workflows/Truffle%20Unittests/badge.svg) ![Solidity linter](https://github.com/axna/scarce-editions/workflows/Solidity%20linter/badge.svg)
 
 Scarce editions are unique pieces of art, available for a limited time. Used by [zien][zien].
 
