@@ -32,7 +32,7 @@
     "test": "truffle test",
     "ganache": "ganache-cli --port 7545 --gasLimit 0xFFFFFFFF",
     "flatten": "truffle-flattener ./contracts/ScarceEdition.sol > ./ScareEditionFlattened.sol",
-    "mainnet-migrate": "truffle deploy--network main",
+    "mainnet-migrate": "truffle deploy --network main",
     "ropsten-migrate": "truffle deploy --network ropsten",
     "rinkeby-migrate": "truffle deploy --network rinkeby",
     "kovan-migrate": "truffle deploy --network kovan"
