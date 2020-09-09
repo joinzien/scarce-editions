@@ -21,11 +21,12 @@ This project is developed using Node.js with the following versions
 
 It is recommended that [Node Version Manager][nvm] is used to ensure the correct versions are used. 
 
-    nvm install lts/dubnium
-    nvm use lts/dubnium
+    nvm install lts/erbium 
+    nvm use lts/erbium 
     
-The expected output is    
-    Now using node v10.19.0 (npm v6.13.4)
+The expected output is
+
+    Now using node v12.18.3 (npm v6.14.6)
 
 ### Dependencies
 
