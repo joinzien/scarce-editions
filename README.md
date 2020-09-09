@@ -25,6 +25,7 @@ It is recommended that [Node Version Manager][nvm] is used to ensure the correct
     nvm use lts/erbium 
     
 The expected output is
+
     Now using node v12.18.3 (npm v6.14.6)
 
 ### Dependencies
