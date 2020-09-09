@@ -16,8 +16,7 @@ Noteworthy changes are recorded in the [changelog][changelog]. Brief instruction
 
 This project is developed using Node.js with the following versions 
 
-* node 10.19.0
-* npm 6.13.4
+* node lts/erbium
 
 It is recommended that [Node Version Manager][nvm] is used to ensure the correct versions are used. 
 
