@@ -25,3 +25,6 @@ yarn-error.log*
 
 # Flattened solidity
 ScareEditionFlattened.sol
+
+#ABI
+ScarceEdition.abi
