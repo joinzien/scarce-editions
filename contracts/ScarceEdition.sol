@@ -22,7 +22,7 @@ contract ScarceEdition is ERC721 {
   
   modifier ownerOrOperatorOnly() {
     if ((msg.sender != _owner) && (msg.sender != _operator)) {
-      revert("Only the contract owner can perform this operation");
+      revert("Only the contract owner or operator can perform this operation");
     }
     _;
   }  

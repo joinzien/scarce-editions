@@ -7,7 +7,7 @@ let CONTRACT;
 contract('ScarceEditionCreate', (accounts) => {
     const addrOwner = accounts[0];
     
-    const createError = "Error: Returned error: VM Exception while processing transaction: revert Only the contract owner can perform this operation -- Reason given: Only the contract owner can perform this operation.";
+    const createError = "Error: Returned error: VM Exception while processing transaction: revert Only the contract owner or operator can perform this operation -- Reason given: Only the contract owner or operator can perform this operation.";
     
     beforeEach(async () => {
         CONTRACT = await ScarceEdition.new({ from: addrOwner });
