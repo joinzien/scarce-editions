@@ -6,6 +6,9 @@ let CONTRACT;
 
 contract('ScarceEditionCreate', (accounts) => {
     const addrOwner = accounts[0];
+    
+    const createError = "Error: Returned error: VM Exception while processing transaction: revert Only the contract owner can perform this operation -- Reason given: Only the contract owner can perform this operation.";
+    
     beforeEach(async () => {
         CONTRACT = await ScarceEdition.new({ from: addrOwner });
     });
@@ -106,7 +109,7 @@ contract('ScarceEditionCreate', (accounts) => {
         const totalSupplyAfter = await CONTRACT.totalSupply.call();
 
         assert.strictEqual(totalSupplyBefore.toNumber(), totalSupplyAfter.toNumber());
-        assert.strictEqual(actualError.toString(),"Error: Returned error: VM Exception while processing transaction: revert Only the contract owner can perform this operation -- Reason given: Only the contract owner can perform this operation.");
+        assert.strictEqual(actualError.toString(), createError);
     });  
 
     
@@ -132,7 +135,7 @@ contract('ScarceEditionCreate', (accounts) => {
         const totalSupplyAfter = await CONTRACT.totalSupply.call();
 
         assert.strictEqual(totalSupplyBefore.toNumber(), totalSupplyAfter.toNumber());
-        assert.strictEqual(actualError.toString(),"Error: Returned error: VM Exception while processing transaction: revert Only the contract owner can perform this operation -- Reason given: Only the contract owner can perform this operation.");
+        assert.strictEqual(actualError.toString(), createError);
     }); 
                     
 });
