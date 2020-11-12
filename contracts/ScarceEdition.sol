@@ -20,9 +20,9 @@ contract ScarceEdition is ERC721 {
     _;
   }  
   
-  modifier onlyOperator() {
-    if (msg.sender != _operator) {
-      revert("Only the contract operator can perform this operation");
+  modifier ownerOrOperatorOnly() {
+    if ((msg.sender != _owner) && (msg.sender != _operator)) {
+      revert("Only the contract owner can perform this operation");
     }
     _;
   }  
@@ -33,7 +33,7 @@ contract ScarceEdition is ERC721 {
     * @param tokenId, uint256 ID of the work
     * @param uri uri of the work
     */
-  function create(address to, uint256 tokenId, string memory uri) public onlyOwner onlyOperator returns (bool) {
+  function create(address to, uint256 tokenId, string memory uri) public ownerOrOperatorOnly returns (bool) {
     _mint(to, tokenId);
     _setTokenURI(tokenId, uri); 
 

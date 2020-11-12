@@ -12,6 +12,7 @@ contract('ScarceEditionCreate', (accounts) => {
 
     it('create: Create a new Edition as the contract owner', async () => {
         const addrRecipient = accounts[1];
+
         const tokenID = 1234567890
         const tokenURIBefore = "http://scarce.editions/one"
         
@@ -26,8 +27,49 @@ contract('ScarceEditionCreate', (accounts) => {
         assert.strictEqual(tokenURIBefore, tokenURIAfter);
     });
     
+    it('create: Create a new Edition as the contract owner, after setting the operator', async () => {
+        const addrRecipient = accounts[1];
+	const addrOperator = accounts[2]; 
+	
+        const tokenID = 1234567890
+        const tokenURIBefore = "http://scarce.editions/one"
+        
+        const setOperatorRes = await CONTRACT.setOperator(addrOperator) 
+        
+        const totalSupplyBefore = await CONTRACT.totalSupply() 
+
+        const createRes = await CONTRACT.create(addrRecipient, tokenID, tokenURIBefore, { from: addrOwner });
+
+        const totalSupplyAfter = await CONTRACT.totalSupply() 
+        const tokenURIAfter = await CONTRACT.tokenURI(tokenID);
+
+ 	assert.strictEqual(totalSupplyBefore.toNumber() + 1, totalSupplyAfter.toNumber());
+        assert.strictEqual(tokenURIBefore, tokenURIAfter);
+    });    
+
+    it('create: Create a new Edition as the contract operator', async () => {
+        const addrRecipient = accounts[1];
+	const addrOperator = accounts[2]; 
+	
+        const tokenID = 1234567890
+        const tokenURIBefore = "http://scarce.editions/one"
+        
+        const setOperatorRes = await CONTRACT.setOperator(addrOperator) 
+        
+        const totalSupplyBefore = await CONTRACT.totalSupply() 
+
+        const createRes = await CONTRACT.create(addrRecipient, tokenID, tokenURIBefore, { from: addrOperator });
+
+        const totalSupplyAfter = await CONTRACT.totalSupply() 
+        const tokenURIAfter = await CONTRACT.tokenURI(tokenID);
+
+ 	assert.strictEqual(totalSupplyBefore.toNumber() + 1, totalSupplyAfter.toNumber());
+        assert.strictEqual(tokenURIBefore, tokenURIAfter);
+    }); 
+    
     it('create: Create a new Edition when not the contract owner', async () => {
         const addrRecipient = accounts[1];
+
         const tokenID = 1234567890
         const tokenURIBefore = "http://scarce.editions/one"
 
@@ -44,5 +86,6 @@ contract('ScarceEditionCreate', (accounts) => {
 
         assert.strictEqual(totalSupplyBefore.toNumber(), totalSupplyAfter.toNumber());
         assert.strictEqual(actualError.toString(),"Error: Returned error: VM Exception while processing transaction: revert Only the contract owner can perform this operation -- Reason given: Only the contract owner can perform this operation.");
-    });      
+    });  
+               
 });
