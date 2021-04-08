@@ -6,7 +6,7 @@ pragma experimental ABIEncoderV2;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract ScarceEdition is ERC721 {
-  uint constant maxBatch = 10;
+  uint constant maxBatch = 20;
 
   address private _owner;
   address private _operator;  
