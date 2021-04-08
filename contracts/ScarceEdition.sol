@@ -49,7 +49,8 @@ contract ScarceEdition is ERC721 {
     * @param tokenId, uint256 ID of the work
     * @param uri uri of the work
     */
-  function batchCreate(uint256 batchSize, address[maxBatch] memory to, uint256[maxBatch] memory tokenId, string[maxBatch] memory uri) public ownerOrOperatorOnly returns (bool) {
+  function batchCreate(uint256 batchSize, address[maxBatch] memory to, 
+    uint256[maxBatch] memory tokenId, string[maxBatch] memory uri) public ownerOrOperatorOnly returns (bool) {
 
     if (batchSize > maxBatch) {
       revert("Batches can not exceed the max batch size (10)");
