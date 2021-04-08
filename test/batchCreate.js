@@ -36,10 +36,31 @@ contract('ScarceEditionBatchCreate', (accounts) => {
         	accounts[1], 
         	accounts[1],
         	accounts[1], 
-        	accounts[1],        	
+        	accounts[1], 
+       		accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1],
+        	accounts[1], 
+        	accounts[1],
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1], 
+        	accounts[1],
+        	accounts[1], 
+        	accounts[1],           	       	
         ];
         
-        const token_ids = [1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10, 1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10];
+        const token_ids = [1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10, 1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10,
+         		   1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10, 1, 2, 3, 4, 5, 6, 7 ,8 ,9, 10];
         
         const urls = [
         	"http://url.io/drop/01/scarce-edition/211345a53c261a7e877b1e05a8f239e9",
@@ -58,6 +79,22 @@ contract('ScarceEditionBatchCreate', (accounts) => {
         	"http://url.io/drop/01/scarce-edition/211345a53c267a7e877b1e05a8f239e9",
         	"http://url.io/drop/01/scarce-edition/211345a53c268a7e877b1e05a8f239e9",
         	"http://url.io/drop/01/scarce-edition/211345a53c269a7e877b1e05a8f239e9",        	                		"http://url.io/drop/01/scarce-edition/211345a53c26aa7e877b1e05a8f239e9",        	
+      		"http://url.io/drop/01/scarce-edition/211345a53c261a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c262a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c263a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c264a7e877b1e05a8f239e9",        	                		"http://url.io/drop/01/scarce-edition/211345a53c265a7e877b1e05a8f239e9",	        
+        	"http://url.io/drop/01/scarce-edition/211345a53c266a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c267a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c268a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c269a7e877b1e05a8f239e9",        	                		"http://url.io/drop/01/scarce-edition/211345a53c26aa7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c261a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c262a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c263a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c264a7e877b1e05a8f239e9",        	                		"http://url.io/drop/01/scarce-edition/211345a53c265a7e877b1e05a8f239e9",	        
+        	"http://url.io/drop/01/scarce-edition/211345a53c266a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c267a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c268a7e877b1e05a8f239e9",
+        	"http://url.io/drop/01/scarce-edition/211345a53c269a7e877b1e05a8f239e9",        	                		"http://url.io/drop/01/scarce-edition/211345a53c26aa7e877b1e05a8f239e9", 
         ];
         
         const totalSupplyBefore = await CONTRACT.totalSupply() 
