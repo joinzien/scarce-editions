@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.6.0;
+pragma experimental ABIEncoderV2;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract ScarceEdition is ERC721 {
+  uint constant maxBatch = 40;
+
   address private _owner;
   address private _operator;  
 
@@ -41,6 +44,27 @@ contract ScarceEdition is ERC721 {
   }
 
   /**
+    * @dev function to safely create a new token.
+    * @param to The address that will own the minted token
+    * @param tokenId, uint256 ID of the work
+    * @param uri uri of the work
+    */
+  function batchCreate(uint256 batchSize, address[maxBatch] memory to, 
+    uint256[maxBatch] memory tokenId, string[maxBatch] memory uri) public ownerOrOperatorOnly returns (bool) {
+
+    if (batchSize > maxBatch) {
+      revert("Batches can not exceed the max batch size (10)");
+    }
+	  
+    for (uint256 i = 0; i < batchSize; i++) {
+    	_mint(to[i], tokenId[i]);
+    	_setTokenURI(tokenId[i], uri[i]); 
+    }
+
+    return true;
+  }
+
+  /**
     * @dev function to set the operator.
     * Reverts if the given editionNumber is greater than editionCount.
     * @param operator The address of the new operator
@@ -50,5 +74,7 @@ contract ScarceEdition is ERC721 {
 
     return true;
   }
+  
+  
 
 }
