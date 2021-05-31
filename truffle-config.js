@@ -21,8 +21,11 @@
  */
 
 const HDWalletProvider = require("truffle-hdwallet-provider");
+
 const mnemonic = "Your account mnemonic";
 const infuraKey = "Your Infura project ID";
+
+const beresheetNode = "https://beresheet1.edgewa.re";
 
 module.exports = {
   /**
@@ -71,14 +74,22 @@ module.exports = {
       gasPrice: 20000000000,
       gas: 3716887
     },
-    main: {
+    beresheet: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, beresheetNode);
+      },
+      network_id: 2022,
+      gasPrice: 20000000000, // 20 GWEI
+      gas: 3716887    // gas limit, set any number you want
+    },    
+    ethereum: {
       provider: function() {
         return new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/"+infuraKey);
       },
       network_id: 1,
       gasPrice: 20000000000, // 20 GWEI
       gas: 3716887    // gas limit, set any number you want
-    }    
+    } 
   },
 
   // Configure your compilers

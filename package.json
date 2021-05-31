@@ -34,10 +34,11 @@
     "ganache": "ganache-cli --port 7545 --gasLimit 0xFFFFFFFF",
     "flatten": "truffle-flattener ./contracts/ScarceEdition.sol > ./ScareEditionFlattened.sol",
     "lint": "solhint contracts/*.sol",
-    "mainnet-migrate": "truffle deploy --network main",
+    "ethereum-migrate": "truffle deploy --network ethereum",
     "ropsten-migrate": "truffle deploy --network ropsten",
     "rinkeby-migrate": "truffle deploy --network rinkeby",
-    "kovan-migrate": "truffle deploy --network kovan"
+    "kovan-migrate": "truffle deploy --network kovan",
+    "beresheet-migrate": "truffle deploy --network beresheet"    
   },
   "devDependencies": {
     "truffle-flattener": "^1.5.0"
