@@ -12,20 +12,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/axna/scarce-editions.git"
+    "url": "https://github.com/ziendotio/scarce-editions.git"
   },
   "files": [
     "build",
     "contracts"
   ],
-  "homepage": "https://github.com/axna/scarce-editions",
-  "author": "AxNA <hello@axna.io>",
+  "homepage": "https://github.com/ziendotio/scarce-editions",
+  "author": "zien <hhello@zien.io>",
   "license": "MIT",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.2.0",
-    "ganache-cli": "^6.12.1",
-    "solhint": "^3.3.2",
-    "truffle": "^5.1.52",
+    "@openzeppelin/contracts": "^3.4.1",
+    "ganache-cli": "^6.12.2",
+    "solhint": "^3.3.6",
+    "truffle": "^5.3.8",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "scripts": {
