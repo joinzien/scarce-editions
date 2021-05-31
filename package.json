@@ -19,7 +19,7 @@
     "contracts"
   ],
   "homepage": "https://github.com/ziendotio/scarce-editions",
-  "author": "zien <hhello@zien.io>",
+  "author": "zien <hello@zien.io>",
   "license": "MIT",
   "dependencies": {
     "@openzeppelin/contracts": "^3.4.1",
