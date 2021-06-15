@@ -10,9 +10,10 @@ Noteworthy changes are recorded in the [changelog][changelog]. Brief instruction
 - Based on the [ERC721][erc721] standard. 
 - ERC721 uses a uint256 as the unique id of each token. 
 
-## Developing
+## Contribute
+We welcome [contributions][contrib], be they [issues][issues], [pull requests][pullrequest] or in another form that follow our [code of conduct][codeofconduct].
 
-### Prerequisites
+## Building
 
 This project is developed using Node.js with the following versions 
 
@@ -27,26 +28,17 @@ The expected output is
 
     Now using node v12.18.3 (npm v6.14.6)
 
-### Dependencies
-
 Install dependencies using [npm][npm]
 
     npm install
 
 This will install all the required packages to develop using the Scarce Editions Contract.
 
+    npx hardhat compile
+
 ## Testing
 
-Start `ganache` in a separate terminal tab or window.
-
-    npm run ganache
-
-Run the tests
-
     npx hardhat test
-
-## Contribute
-We welcome [contributions][contrib], be they [issues][issues], [pull requests][pullrequest] or in another form that follow our [code of conduct][codeofconduct].
 
 [zien]: https://zien.io/
 [nft]: https://en.wikipedia.org/wiki/Non-fungible_token
