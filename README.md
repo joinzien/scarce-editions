@@ -58,4 +58,4 @@ We welcome [contributions][contrib], be they [issues][issues], [pull requests][p
 [contrib]: .github/CONTRIBUTING.md
 [codeofconduct]: ./CODE_OF_CONDUCT.md 
 [changelog]: CHANGELOG.md
-[usage]: usage.md
+[usage]: documentation/usage.md
