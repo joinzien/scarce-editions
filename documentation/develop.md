@@ -1,9 +1,10 @@
 # Developing
 
-We record our architecture decisions 
+We record our [architecture decisions][adrs]. Thse provide background on why we choose our solutions. 
 
+## Building locally
 
-## Prerequisites
+### Prerequisites
 
 This project is developed using Node.js with the following versions 
 
@@ -18,7 +19,7 @@ The expected output is
 
     Now using node v12.18.3 (npm v6.14.6)
 
-## Dependencies
+### Dependencies
 
 Install dependencies using [npm][npm]
 
@@ -26,7 +27,7 @@ Install dependencies using [npm][npm]
 
 This will install all the required packages to develop using the Scarce Editions Contract.
 
-# Testing
+### Testing
 
 Start `ganache` in a separate terminal tab or window.
 
