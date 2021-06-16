@@ -1,7 +1,7 @@
 # Scarce Editions
 ![Truffle Unittests](https://github.com/axna/scarce-editions/workflows/Truffle%20Unittests/badge.svg) ![Solidity linter](https://github.com/axna/scarce-editions/workflows/Solidity%20linter/badge.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
-Scarce editions are unique pieces of art, available for a limited time. Used by [zien][zien].
+Scarce Editions are NFTs with a license and instructions to produce a physical artwork. Used by [zien][zien].
 
 Noteworthy changes are recorded in the [changelog][changelog]. Brief instructions on [creating an edition][usage] are provided.
 
