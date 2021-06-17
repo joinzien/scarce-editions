@@ -43,7 +43,7 @@ Start `ganache` in a separate terminal tab or window.
 
 Run the tests
 
-    npm test
+    npx hardhat test
 
 ## Contribute
 We welcome [contributions][contrib], be they [issues][issues], [pull requests][pullrequest] or in another form that follow our [code of conduct][codeofconduct].
