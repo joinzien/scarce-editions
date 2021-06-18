@@ -1,6 +1,29 @@
 {
   "name": "scarce-editions",
-  "description": "ERC721 token standard, designed to represent born digital art",
+  "version": "1.0.0",
+  "description": "Scarce Editions are NFTs with a license and instructions to produce a physical artwork",
+  "keywords": [
+    "ethereum",
+    "erc721",
+    "solidity",
+    "smart",
+    "contract",
+    "blockchain"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joinzien/scarce-editions.git"
+  },
+  "homepage": "https://github.com/joinzien/scarce-editions",
+  "author": "zien <hello@zien.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.4.1",
+    "ganache-cli": "^6.12.2",
+    "solhint": "^3.3.6",
+    "truffle": "^5.3.8",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
