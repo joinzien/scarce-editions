@@ -29,13 +29,9 @@ This will install all the required packages to develop using the Scarce Editions
 
 ### Testing
 
-Start `ganache` in a separate terminal tab or window.
-
-    npm run ganache
-
 Run the tests
 
-    npm test
+    npx hardhat test
 
 [adrs]: architecture/decisions/
 [npm]: https://docs.npmjs.com/getting-started/installing-node
