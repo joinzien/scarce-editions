@@ -1,4 +1,6 @@
 import '@nomiclabs/hardhat-waffle';
+import '@nomiclabs/hardhat-solhint';
+
 // import { HardhatUserConfig } from 'hardhat/types';
 
 // Here you can write Hardhat tasks. To learn how to create your own go to

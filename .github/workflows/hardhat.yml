@@ -1,4 +1,4 @@
-name: Solidity linter
+name: Hardhat Unittests
 
 on:
     push:
@@ -9,9 +9,9 @@ on:
         branches:
             - '*'
 jobs:
-    run_solidity_linter:
+    run_hardhart_unittests:
         runs-on: ubuntu-latest
-        name: Run Solidity linter
+        name: Run the Hardhat unit tests
         steps:
             - uses: actions/checkout@v1
             - name: Use Node.js 12.x
@@ -19,4 +19,5 @@ jobs:
               with:
                   node-version: 12.x
             - run: npm install
-            - run: npx hardhat check
+            - run: npx hardhat compile
+            - run: npx hardhat test
