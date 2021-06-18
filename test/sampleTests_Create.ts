@@ -6,7 +6,7 @@ import { ethers } from 'hardhat';
 import { expect } from 'chai';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
 
-describe('ScarceEdition_Create', function () {
+describe('ScarceEdition_Create', function() {
 	let CONTRACT: any;
 	let ScarceEditionContract: any;
 	let addrOwner: SignerWithAddress;
@@ -14,7 +14,7 @@ describe('ScarceEdition_Create', function () {
 	let addrOperator: SignerWithAddress;
 
 	const createError: string =
-		'Error: VM Exception while processing transaction: revert Only the contract owner or operator can perform this operation';
+		"Error: VM Exception while processing transaction: reverted with reason string 'Only the contract owner or operator can perform this operation'";
 
 	beforeEach(async () => {
 		ScarceEditionContract = await ethers.getContractFactory(
