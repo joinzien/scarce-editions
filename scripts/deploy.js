@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 async function main() {
 
     const [deployer] = await ethers.getSigners();
