@@ -13,8 +13,7 @@ describe('ScarceEdition_Create', function() {
 	let addrRecipient: SignerWithAddress;
 	let addrOperator: SignerWithAddress;
 
-	const createError: string =
-		"Error: VM Exception while processing transaction: reverted with reason string 'Only the contract owner or operator can perform this operation'";
+	const createError: string = "Only the contract owner or operator can perform this operation";
 
 	beforeEach(async () => {
 		ScarceEditionContract = await ethers.getContractFactory(
@@ -127,21 +126,15 @@ describe('ScarceEdition_Create', function() {
 			const tokenID = 1234567890;
 			const tokenURIBefore = 'http://scarce.editions/one';
 			const totalSupplyBefore = await CONTRACT.totalSupply.call();
-			let actualError = null;
-			try {
-				const createRes = await CONTRACT.connect(addrRecipient).create(
-					addrRecipient.address,
-					tokenID,
-					tokenURIBefore
-				);
-			} catch (error) {
-				actualError = error;
-			}
+
+			await expect(
+				CONTRACT.connect(addrRecipient).create(addrRecipient.address, tokenID, tokenURIBefore)
+			  ).to.be.revertedWith("Only the contract owner or operator can perform this operation");
+
 			const totalSupplyAfter = await CONTRACT.totalSupply.call();
 			expect(totalSupplyBefore.toNumber()).to.equal(
 				totalSupplyAfter.toNumber()
 			);
-			expect(actualError.toString()).to.equal(createError);
 		});
 
 		//
@@ -156,21 +149,15 @@ describe('ScarceEdition_Create', function() {
 				addrOwner.address
 			);
 			const totalSupplyBefore = await CONTRACT.totalSupply.call();
-			let actualError = null;
-			try {
-				const createRes = await CONTRACT.connect(addrOperator).create(
-					addrRecipient.address,
-					tokenID,
-					tokenURIBefore
-				);
-			} catch (error) {
-				actualError = error;
-			}
+
+			await expect(
+				CONTRACT.connect(addrOperator).create(addrRecipient.address, tokenID, tokenURIBefore)
+			  ).to.be.revertedWith("Only the contract owner or operator can perform this operation");
+
 			const totalSupplyAfter = await CONTRACT.totalSupply.call();
 			expect(totalSupplyBefore.toNumber()).to.equal(
 				totalSupplyAfter.toNumber()
 			);
-			expect(actualError.toString()).to.equal(createError);
 		});
 	});
 });
