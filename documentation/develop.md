@@ -33,6 +33,12 @@ Run the tests
 
     npx hardhat test
 
+
+### Deploy
+
+    npx hardhat --network network-name deploy
+
+
 [adrs]: architecture/decisions/
 [npm]: https://docs.npmjs.com/getting-started/installing-node
 [nvm]: https://github.com/nvm-sh/nvm
