@@ -1,3 +1,6 @@
+// ethers plugin required to interact with the contract
+require('@nomiclabs/hardhat-ethers');
+
 import '@nomiclabs/hardhat-waffle';
 import '@nomiclabs/hardhat-solhint';
 import 'solidity-coverage';
@@ -12,6 +15,9 @@ import { HardhatUserConfig } from 'hardhat/types';
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
+// private key from the pre-funded Moonbase Alpha testing account
+const { privateKey } = require('./secrets.json');
+
 const config: HardhatUserConfig = {
 	abiExporter: {
 		path: './abi',
@@ -19,6 +25,14 @@ const config: HardhatUserConfig = {
 		flat: true,
 		only: [],
 		spacing: 2,
+	},
+	networks: {
+		// Moonbase Alpha network specification
+		moonbase: {
+		  url: `https://rpc.testnet.moonbeam.network`,
+		  chainId: 1287,
+		  accounts: [privateKey]
+		}
 	},
 	solidity: {
 		version: '0.7.6',
