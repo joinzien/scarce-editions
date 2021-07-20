@@ -159,5 +159,19 @@ describe('ScarceEdition_Create', function() {
 				totalSupplyAfter.toNumber()
 			);
 		});
+
+		it('setOperator: set the operator of an Edition when not the contract owner', async () => {
+			const totalSupplyBefore = await CONTRACT.totalSupply.call();
+
+			await expect(
+				CONTRACT.connect(addrRecipient).setOperator(addrOperator.address)
+			  ).to.be.revertedWith("Only the contract owner can perform this operation");
+
+			const totalSupplyAfter = await CONTRACT.totalSupply.call();
+			expect(totalSupplyBefore.toNumber()).to.equal(
+				totalSupplyAfter.toNumber()
+			);
+		});
+
 	});
 });

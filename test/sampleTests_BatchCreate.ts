@@ -26,6 +26,9 @@ describe('ScarceEdition_BatchCreate', function () {
 	});
 
 	describe('Transactions', () => {
+
+		//
+
 		it('batchCreate: Create a new Edition as the contract owner', async () => {
 			const to_addresses = [
 				addrRecipient.address,
@@ -132,6 +135,55 @@ describe('ScarceEdition_BatchCreate', function () {
 			expect(totalSupplyBefore.toNumber() + 10).to.equal(
 				totalSupplyAfter.toNumber()
 			);
+		});
+
+
+		it('batchCreate: revert when batchSize > maxBatch', async () => {
+
+			// uint256 batchSize
+			let batchSize = 50;
+			// console.log("BATCHSIZE: ", batchSize)
+
+			// uint256 maxBatch 
+			let maxbatch = 40;
+			console.log("MAXBATCH: ", maxbatch)
+
+			// address[maxBatch] memory to
+			let to_addresses = new Array();
+			for (let i = 1; i <= maxbatch; i++) {
+				to_addresses.push(addrRecipient.address);
+			}
+			console.log("TO_ADDRESSES: ", to_addresses)
+			
+			// uint256[maxBatch] memory tokenId
+			let token_ids = new Array();
+			let j = 1
+			for (let k = 1; k <= maxbatch; k++ ) {
+				if ( j > 10 ) { j = 1 }
+				token_ids.push(j);
+				j++
+			}
+			console.log("TOKEN_IDS: ", token_ids)
+
+			// string[maxBatch] memory uri
+			let urls = new Array();
+			for ( let k = 1; k <= maxbatch; k++) {
+				urls.push('http://url.io/drop/01/scarce-edition/211345a53c261a7e877b1e05a8f239e9')
+			}
+			console.log("URLS: ", urls)
+
+			const totalSupplyBefore = await CONTRACT.totalSupply();
+
+			await expect(
+				CONTRACT.batchCreate(batchSize, to_addresses, token_ids, urls))
+			.to.be.revertedWith("Batches can not exceed the max batch size (10)");
+
+			const totalSupplyAfter = await CONTRACT.totalSupply();
+
+			expect(totalSupplyBefore.toNumber()).to.equal(
+				totalSupplyAfter.toNumber()
+			);
+
 		});
 	});
 });
