@@ -161,6 +161,7 @@ describe('ScarceEdition_Create', function() {
 		});
 
 		it('setOperator: set the operator of an Edition when not the contract owner', async () => {
+			
 			const totalSupplyBefore = await CONTRACT.totalSupply.call();
 
 			await expect(
