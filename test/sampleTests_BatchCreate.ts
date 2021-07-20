@@ -26,6 +26,9 @@ describe('ScarceEdition_BatchCreate', function () {
 	});
 
 	describe('Transactions', () => {
+
+		//
+
 		it('batchCreate: Create a new Edition as the contract owner', async () => {
 			const to_addresses = [
 				addrRecipient.address,
@@ -133,5 +136,6 @@ describe('ScarceEdition_BatchCreate', function () {
 				totalSupplyAfter.toNumber()
 			);
 		});
+
 	});
 });
