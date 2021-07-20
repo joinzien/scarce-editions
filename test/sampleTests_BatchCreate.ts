@@ -142,18 +142,15 @@ describe('ScarceEdition_BatchCreate', function () {
 
 			// uint256 batchSize
 			let batchSize = 50;
-			// console.log("BATCHSIZE: ", batchSize)
 
 			// uint256 maxBatch 
 			let maxbatch = 40;
-			console.log("MAXBATCH: ", maxbatch)
 
 			// address[maxBatch] memory to
 			let to_addresses = new Array();
 			for (let i = 1; i <= maxbatch; i++) {
 				to_addresses.push(addrRecipient.address);
 			}
-			console.log("TO_ADDRESSES: ", to_addresses)
 			
 			// uint256[maxBatch] memory tokenId
 			let token_ids = new Array();
@@ -163,14 +160,12 @@ describe('ScarceEdition_BatchCreate', function () {
 				token_ids.push(j);
 				j++
 			}
-			console.log("TOKEN_IDS: ", token_ids)
 
 			// string[maxBatch] memory uri
 			let urls = new Array();
 			for ( let k = 1; k <= maxbatch; k++) {
 				urls.push('http://url.io/drop/01/scarce-edition/211345a53c261a7e877b1e05a8f239e9')
 			}
-			console.log("URLS: ", urls)
 
 			const totalSupplyBefore = await CONTRACT.totalSupply();
 
