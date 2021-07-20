@@ -159,5 +159,6 @@ describe('ScarceEdition_Create', function() {
 				totalSupplyAfter.toNumber()
 			);
 		});
+
 	});
 });
