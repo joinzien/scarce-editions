@@ -1,5 +1,5 @@
 # Scarce Editions
-![Truffle Unittests](https://github.com/axna/scarce-editions/workflows/Truffle%20Unittests/badge.svg) ![Solidity linter](https://github.com/axna/scarce-editions/workflows/Solidity%20linter/badge.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Unittests](https://github.com/joinzien/scarce-editions/actions/workflows/hardhat.yml/badge.svg)](https://github.com/joinzien/scarce-editions/actions/workflows/hardhat.yml) [![Linter](https://github.com/joinzien/scarce-editions/actions/workflows/linter.yml/badge.svg)](https://github.com/joinzien/scarce-editions/actions/workflows/linter.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Scarce Editions are NFTs with a license and instructions to produce a physical artwork. Used by [zien][zien].
 
