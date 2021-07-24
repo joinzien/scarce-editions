@@ -8,12 +8,12 @@ We record our [architecture decisions][adrs]. Thse provide background on why we 
 
 This project is developed using Node.js with the following versions 
 
-* node lts/erbium
+* node lts/fermium
 
 It is recommended that [Node Version Manager][nvm] is used to ensure the correct versions are used. 
 
-    nvm install lts/erbium 
-    nvm use lts/erbium 
+    nvm install lts/fermium
+    nvm use lts/fermium
     
 The expected output is
 
