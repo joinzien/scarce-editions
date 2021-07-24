@@ -1,4 +1,4 @@
-name: Hardhat Unittests
+name: Unittests
 
 on:
     push:
